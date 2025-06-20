@@ -91,8 +91,8 @@
 </head>
 <body>
     <header>
-        <div class="logo">LELAY SKITTEN BILS</div>
-        <div>EÅ DET GJORT BILLIG OG KJAPTAY TO UNGDOMMER</div>
+        <div class="logo">LEI AV SKITTEN BIL?</div>
+        <div>FÅ DET GJORT BILLIG OG KJAPT AV OSS</div>
         <nav>
             <a href="#what-we-do">Hva vi gjør</a>
             <a href="#about">Om oss</a>
@@ -127,7 +127,7 @@
     
     <footer>
         <div class="scrolling-text">
-            LELAY SKITTEN BILS - EÅ DET GJORT BILLIG OG KJAPTAY TO UNGDOMMER - KONTAKT OSS I DAG!
+            BILLIG BILVASK - KONTAKT OSS I DAG!
         </div>
     </footer>
     
