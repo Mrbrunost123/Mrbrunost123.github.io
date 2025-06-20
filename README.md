@@ -3,54 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Nettside</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Bilservice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        header {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7e7;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #007bff;
+        }
+        
+        .services {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .service-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .service-content {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scrolling-text {
+            white-space: nowrap;
+            animation: scrollLeft 20s linear infinite;
+        }
+        
+        @keyframes scrollLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <h1 class="logo">Logo</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">Hjem</a></li>
-                    <li><a href="#">Om oss</a></li>
-                    <li><a href="#">Tjenester</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <div class="logo">LELAY SKITTEN BILS</div>
+        <div>EÅ DET GJORT BILLIG OG KJAPTAY TO UNGDOMMER</div>
+        <nav>
+            <a href="#what-we-do">Hva vi gjør</a>
+            <a href="#about">Om oss</a>
+            <a href="#contact">Kontakt oss</a>
+        </nav>
     </header>
-
-    <section class="hero">
-        <div class="container">
-            <h2>Velkommen til vår nettside</h2>
-            <p>Vi skaper vakre og funksjonelle løsninger</p>
-            <a href="#" class="btn">Les mer</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <div class="feature">
-                <h3>Moderne design</h3>
-                <p>Rene linjer og minimalistisk estetikk</p>
+    
+    <div class="services">
+        <h1 id="our-services">Vår service:</h1>
+        
+        <div class="service-item">
+            <div class="service-header" onclick="toggleService(1)">
+                <h2>Bilvask</h2>
+                <span>+</span>
             </div>
-            <div class="feature">
-                <h3>Responsivt</h3>
-                <p>Fungerer på alle enheter</p>
-            </div>
-            <div class="feature">
-                <h3>Brukerfokusert</h3>
-                <p>Skreddersydd for dine behov</p>
+            <div class="service-content" id="service-1">
+                Utvendig bilvask + pollering om man ønsker
             </div>
         </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2023 Min Nettside. Alle rettigheter reservert.</p>
+        
+        <div class="service-item">
+            <div class="service-header" onclick="toggleService(2)">
+                <h2>Hagearbeid</h2>
+                <span>+</span>
+            </div>
+            <div class="service-content" id="service-2">
+                Elektrisk arbeid<br>
+                det skal stå noe
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="scrolling-text">
+            LELAY SKITTEN BILS - EÅ DET GJORT BILLIG OG KJAPTAY TO UNGDOMMER - KONTAKT OSS I DAG!
         </div>
     </footer>
+    
+    <script>
+        function toggleService(id) {
+            const content = document.getElementById(`service-${id}`);
+            const header = content.previousElementSibling;
+            const plusSign = header.querySelector('span');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                plusSign.textContent = '+';
+            } else {
+                content.style.display = 'block';
+                plusSign.textContent = '-';
+            }
+        }
+    </script>
 </body>
 </html>
